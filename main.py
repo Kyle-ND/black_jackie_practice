@@ -25,6 +25,33 @@ def main():
 
    # players logic
 
+   if user_total == 21 or dealer_total == 21:
+        if user_total == dealer_total:
+            print(f"User_deck : {user_hand} \n dealer_deck : {dealer_hand} \nIt's a Draw")
+        elif user_total == 21:
+            print(f"User_deck : {user_hand} \n dealer_deck : {dealer_hand} \nBlackjack!, you win!")
+        else:
+            print(f"User_deck : {user_hand} \n dealer_deck : {dealer_hand} \nBlackjack!, you lose!")
+   else:
+        game_on = True
+        while game_on:
+            print(f"User_deck : {user_hand} \n dealer_deck : {dealer_hand[0]}")
+            choice = input("Type 'h' to hit or 's' to stand ")
+            if choice.lower() == 'h':
+                user_hand.append(deal_card())
+                user_total = calculate_total(user_hand)
+            else:
+                game_on = False
+                if user_total < 17:
+                    user_hand.append(deal_card())
+                    user_total = calculate_total(user_hand)
+
+            if user_total > 21:
+                print(f"User_deck : {user_hand} \ndealer_deck : {dealer_hand} \nYou lose!")
+                return
+            elif user_total == 21:
+                print(f"User_deck : {user_hand} \ndealer_deck : {dealer_hand} \nYou win!")
+                return
   
 
 
