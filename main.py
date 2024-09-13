@@ -25,22 +25,7 @@ def main():
 
    # players logic
 
-   while True:
-      choice = input("Would you like to HIT or STAND?: ")
-      if choice == "HIT":
-         player.append(deal_card())
-         player_total = calculateValue(player)
-      else:
-         if player_total <= 16:
-            player.append(deal_card())
-            player_total = calculateValue(player)
-         return
-      if player_total > 21:
-          print("You LOSE!")
-          return 
-      elif player_total == 21:
-          print("You WIN")
-          return 
+  
 
 
 
