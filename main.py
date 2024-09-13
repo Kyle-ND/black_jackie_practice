@@ -2,6 +2,7 @@ import random #hint
 from blackjack_art import logo #Game logo
 
 
+
 def main():
     """
 TODO: Blackjack Game Implementation
@@ -12,6 +13,7 @@ Features to Implement:
 1. Game Setup:
    - Create a deck of 52 cards (without jokers) using standard suits and ranks.
    - Shuffle the deck before dealing cards.
+
 
 2. Player and Dealer Setup:
    - Implement player and dealer hands.
@@ -42,3 +44,20 @@ Features to Implement:
    - Ensure proper game loop for continuous play.
 
 """
+import random
+
+card_categories = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+
+cards_list = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
+
+deck = []
+
+for category in card_categories:
+    for card in cards_list:
+        deck.append(f'{cards_list} of {card_categories}')
+
+random.shuffle(deck)
+
+def deal_cards(deck, hand):
+    card = deck.pop()
+    hand.append(card_categories)
