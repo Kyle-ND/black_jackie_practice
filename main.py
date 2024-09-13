@@ -81,11 +81,13 @@ def main():
             if choice.lower() == 'h':
                 player.append(deal_card())
                 player_total = calculateValue(player)
-            else:
+            elif choice.lower() == 's':
                 game_on = False
                 if player_total < 17:
                     player.append(deal_card())
                     player_total = calculateValue(player)
+            else:
+                choice = input("Type 'h' to hit or 's' to stand ")
 
             if player_total > 21:
                 print(f"User_deck : {player} \ndealer_deck : {dealer} \nYou lose!")
@@ -119,6 +121,6 @@ isGame = True
 
 while isGame:
     main()
-    play = input("Type 'y' to play again or 'end' to stop. ")
+    play = input("Type 'play' to play again or 'end' to stop. ")
     if play.lower() != "play":
         isGame = False
