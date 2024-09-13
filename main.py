@@ -3,7 +3,16 @@ from blackjack_art import logo #Game logo
 
 
 def main():
-    """
+   #1
+   suits = ['Hearts','Diamond','Clubs','Spades']
+   ranks = ['2','3','4','5','6','7','8','9','10','Jack','Queen','King','Ace']
+
+   deck = []
+   for suit in suits:
+      for rank in ranks:
+         deck.append(f'{rank} of {suit}')
+   random.shuffle(deck)
+"""
 TODO: Blackjack Game Implementation
 
 This module will simulate a simplified version of a Blackjack card game.
