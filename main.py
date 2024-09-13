@@ -83,7 +83,7 @@ def main():
 #    - Aces can count as either 1 or 11, depending on the hand's value.
 
 def calculateValue (hand):
-   return sum(hand)
+   pass
 
 # 3. Game Flow:
 #    - Deal two cards to both the player and the dealer.
@@ -91,7 +91,7 @@ def calculateValue (hand):
 #    - Dealer should follow the standard rules (e.g., hit until reaching 17 or higher).
 
 def deal_card ():
-   deck = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+   deck = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
    return deck[random.randint(0, len(deck)-1)]
 
 # 4. Determine Outcomes:
