@@ -95,7 +95,18 @@ def main():
 #    - Aces can count as either 1 or 11, depending on the hand's value.
 
 def calculateValue (hand):
-   pass
+   value = 0
+   num_aces = 0
+   for card in hand:
+      value += int(card) == 1
+      if int(card) == 1:
+         value += 10
+         num_aces += 1
+
+   while value > 21 and num_aces > 0:
+      value -= 10
+      num_aces -= 1
+   return total
 
 # 3. Game Flow:
 #    - Deal two cards to both the player and the dealer.
