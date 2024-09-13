@@ -1,6 +1,7 @@
 import random #hint
 from blackjack_art import logo #Game logo
 
+print(logo)
 
 def main():
 # TODO: Blackjack Game Implementation
