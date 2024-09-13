@@ -3,42 +3,49 @@ from blackjack_art import logo #Game logo
 
 
 def main():
-    """
-TODO: Blackjack Game Implementation
+      tens = ['king','queen','jack']
+      others = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+      cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'king','queen','jack', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'king','queen','jack', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'king','queen','jack', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'king','queen','jack']
+      cards_length = len(cards)
+      dealer = [cards[random.randint(0,cards_length)], cards[random.randint(0,cards_length)]]
+      player = [cards[random.randint(0,cards_length)], cards[random.randint(0,cards_length)]]
 
-This module will simulate a simplified version of a Blackjack card game.
+      def get_points(person):
+         points = 0
+         for card in person:
+            if card in tens:
+                  points += 10
+            elif card in others:
+                  points += card
+            else:
+                  if points <= 10:
+                     points += 11
+                  else:
+                     points += 1
+         return points
 
-Features to Implement:
-1. Game Setup:
-   - Create a deck of 52 cards (without jokers) using standard suits and ranks.
-   - Shuffle the deck before dealing cards.
+      choice = "deal"
 
-2. Player and Dealer Setup:
-   - Implement player and dealer hands.
-   - Each hand should be able to hold cards and calculate its total value.
-   - Aces can count as either 1 or 11, depending on the hand's value.
+      while choice == "deal":
+         print(f"Dealer = [{dealer[0]}] \nPlayer = {player}")
+         player_points, dealer_points  = get_points(player), get_points(dealer)
 
-3. Game Flow:
-   - Deal two cards to both the player and the dealer.
-   - Allow the player to "hit" (get another card) or "stand" (stop drawing cards).
-   - Dealer should follow the standard rules (e.g., hit until reaching 17 or higher).
+         answer = input("Would you like to deal or pass? ").lower().replace(" ","")
 
-4. Determine Outcomes:
-   - Implement the winning conditions:
-     - Player or dealer gets Blackjack (21 points with two cards).
-     - Player or dealer busts (exceeds 21 points).
-     - Player's hand is closer to 21 than the dealer's hand without going over.
-   - Implement conditions for a push (tie).
+         if answer == 'deal' or player_points < 17:
+            player.append(cards[random.randint(0,cards_length)])
 
-5. User Interface:
-   - CLI interface for the game.
-   - Display the player's hand, dealer's visible card, and game status.
-   - Announce the winner at the end of each game.
+         else:
+            if player_points > 21 or dealer_points > player_points:
+               print("You lost :(")
+            elif player_points == 21:
+               print("BlackJackkkk!!!")
+            elif player_points > dealer_points:
+               print("You win :)")
+               break
+            elif player_points == dealer_points:
+               print("It's a draw :/")
+      choice = answer
 
-
-7. Code Optimizations and Error Handling:(BONUS NOT A MUST !!!)
-   - Add input validation for player choices (hit or stand).
-   - Handle edge cases (e.g., deck running out of cards).
-   - Ensure proper game loop for continuous play.
-
-"""
+print(logo)
+main()
