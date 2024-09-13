@@ -83,7 +83,7 @@ def main():
 #    - Aces can count as either 1 or 11, depending on the hand's value.
 
 def calculateValue (hand):
-   pass 
+   return sum(hand)
 
 # 3. Game Flow:
 #    - Deal two cards to both the player and the dealer.
