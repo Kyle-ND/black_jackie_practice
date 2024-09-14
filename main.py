@@ -42,3 +42,13 @@ Features to Implement:
    - Ensure proper game loop for continuous play.
 
 """
+card_groups = ["Hearts","Diamonds","Spades","Clubs"]
+card_lists = ["Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"]
+deck = []
+for card_group in card_groups:
+   for card_list in card_lists:
+      set=deck.append()
+print (set)
+
+
+
