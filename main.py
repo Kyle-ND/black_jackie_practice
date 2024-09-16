@@ -1,15 +1,20 @@
 import random #hint
 from blackjack_art import logo #Game logo
 
-
+card_suits = ["Hearts","Clubs","Diamonds","Spades"]
+card_ranks= ["Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"]
+deck = []
 def main():
-    card_groups = ["Hearts","Clubs","Diamonds","Spades"]
-    card_list= ["Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"]
-    deck = []
-    list = deck.append[]
-    
-    """
-TODO: Blackjack Game Implementation
+   for suits in card_suits:
+      for rank in card_ranks:
+         deck.append([suits,rank])
+         
+   
+   print(deck)
+ 
+ 
+ 
+"""TODO: Blackjack Game Implementation
 
 This module will simulate a simplified version of a Blackjack card game.
 
@@ -51,3 +56,4 @@ Features to Implement:
 
 
 
+main()
