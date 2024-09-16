@@ -1,9 +1,28 @@
+from ctypes import c_wchar
 import random #hint
 from blackjack_art import logo #Game logo
 
 card_suits = ["Hearts","Clubs","Diamonds","Spades"]
 card_ranks= ["Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"]
 deck = []
+def points(person):
+   my_value = 0
+   my_a = 0
+   for char in person:
+      if type(char) == str:
+         c == char.lower()
+         if c in ["king","queen","jack"]:
+            my_value += 10
+         elif c == 'ace':
+            my_value += 11
+            my_a += 1
+         elif type(char) == int:
+            my_value += char
+            while my_value > 21 and my_a:
+               my_value -= 10
+               my_a -= 1
+   return my_value
+            
 def main():
    for suits in card_suits:
       for rank in card_ranks:
@@ -11,7 +30,33 @@ def main():
    count = len(deck)
    player = [deck[random.randint(0,count)],deck[random.randint(0,count)]]
    dealer = [deck[random.randint(0,count)],deck[random.randint(0,count)]]
-   print(player)
+   
+   choice = "deal"
+   
+   while choice == "deal":
+      print(f"Dealer = [{dealer[0]}] \nPlayer = {player}")
+      player_points, dealer_points = points(player), points(dealer)
+      
+      answer = input("Would you like to deal or pass? ").lower().replace(" ","")
+      if answer == 'deal' or player_points < 17:
+         player.append(deck[random.randint(0,count)])
+      else:
+         if player_points > 21 or dealer_points > player_points:
+            print("You lost the game.")
+            break
+         elif player_points == 21:
+            print("Player BlackJack.")
+            break
+         elif dealer_points == 21:
+            print("Dealer BlackJack.")
+            break
+         elif player_points > dealer_points:
+            print("You win the game.")
+            break
+         elif player_points == dealer_points:
+            print("It is Tie.")
+            
+      choice = answer
  
  
  
@@ -56,5 +101,5 @@ Features to Implement:
 
 
 
-
+print(logo)
 main()
