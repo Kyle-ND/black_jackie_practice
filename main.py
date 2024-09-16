@@ -8,9 +8,10 @@ def main():
    for suits in card_suits:
       for rank in card_ranks:
          deck.append([suits,rank])
-         
-   
-   print(deck)
+   count = len(deck)
+   player = [deck[random.randint(0,count)],deck[random.randint(0,count)]]
+   dealer = [deck[random.randint(0,count)],deck[random.randint(0,count)]]
+   print(player)
  
  
  
