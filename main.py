@@ -1,4 +1,3 @@
-from ctypes import c_wchar
 import random #hint
 from blackjack_art import logo #Game logo
 
