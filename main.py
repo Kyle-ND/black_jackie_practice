@@ -10,10 +10,10 @@ def points(person):
    my_a = 0
    for char in person:
       if type(char) == str:
-         c == char.lower()
-         if c in ["king","queen","jack"]:
+         point == char.lower()
+         if point in ["king","queen","jack"]:
             my_value += 10
-         elif c == 'ace':
+         elif point == 'ace':
             my_value += 11
             my_a += 1
          elif type(char) == int:
@@ -46,17 +46,15 @@ def main():
             break
          elif player_points == 21:
             print("Player BlackJack.")
-            break
          elif dealer_points == 21:
             print("Dealer BlackJack.")
-            break
          elif player_points > dealer_points:
             print("You win the game.")
             break
          elif player_points == dealer_points:
             print("It is Tie.")
             
-      choice = answer
+   choice = answer
  
  
  
